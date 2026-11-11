@@ -139,6 +139,12 @@ html[lang="hi"] .eyebrow,html[lang="hi"] .ch-meta,html[lang="hi"] .loc .wn,html[
 
 .cap.ending{inset:0;display:grid;place-content:center;justify-items:center;text-align:center;gap:2.2rem;padding:0 var(--gr) 0 var(--gl)}
 .cap.ending svg{width:64px;height:64px;color:#f2ede2;filter:drop-shadow(0 0 10px rgba(242,237,226,.7));animation:spin 40s linear infinite}
+.credit{position:absolute;left:0;right:0;bottom:calc(env(safe-area-inset-bottom,0px) + 26px);display:grid;gap:7px;justify-items:center;text-align:center;padding:0 var(--gr) 0 var(--gl);font-size:.74rem;line-height:1.5;letter-spacing:.06em;color:var(--ink-3)}
+.credit .by{font-size:.62rem;letter-spacing:.34em;text-transform:uppercase}
+.credit b{font:400 clamp(1.05rem,2vw,1.3rem)/1.2 var(--f-display);letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+.credit a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;letter-spacing:.1em}
+.credit a:hover,.credit a:focus-visible{color:var(--ink);border-color:var(--ink-3)}
+@media (max-height:640px){.credit{position:static;margin-top:1rem}}
 .again{background:none;border:1px solid var(--line);color:var(--ink-2);border-radius:999px;padding:.8rem 1.4rem;font:400 .68rem/1 var(--f-ui);letter-spacing:.32em;text-transform:uppercase;cursor:pointer}
 .again:hover{color:var(--ink);border-color:var(--ink-3)}
 
@@ -249,6 +255,12 @@ button:focus-visible,.pill:focus-within{outline:1px solid var(--accent);outline-
     <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="15" fill="none" stroke="currentColor" stroke-width=".8" stroke-dasharray="84 10.2" stroke-linecap="round"/><circle cx="20" cy="20" r="9.6" fill="none" stroke="currentColor" stroke-width=".6" stroke-dasharray="26 34.3" opacity=".55"/><circle cx="20" cy="20" r="1.1" fill="currentColor"/></svg>
     <h1 id="endH" data-i18n="open">The journey begins in silence.</h1>
     <button class="again" id="againBtn" data-i18n="again">Begin again</button>
+    <footer class="credit">
+      <span class="by" data-i18n="creditBy">Envisioned and designed by</span>
+      <b data-i18n="creditName">Ashutosh Rahangdale</b>
+      <span data-i18n="creditPath">On the spiritual path for the past 6–7 years</span>
+      <a href="https://www.instagram.com/ashyu___/" target="_blank" rel="noopener" data-i18n="creditIg">Instagram · @ashyu___</a>
+    </footer>
   </section>
 </main>
 
@@ -391,7 +403,7 @@ const HI=[
   quote:['जब पाँचों इंद्रियाँ मन के साथ शांत हो जाती हैं और बुद्धि भी विचलित नहीं होती, उसे परम गति कहते हैं।','कठोपनिषद 2.3.10']}
 ];
 const TX={
- en:{open:'The journey begins in silence.',hint:'Tap or scroll to enter',brief:'Seven worlds, seven meditation challenges. Each world asks a little more of you, from 5 minutes of guided breathing in the first to 35 minutes of stillness in the last. Practise one world at a time and watch it awaken.',ladderCap:'Minutes of practice in each world',ladderAria:(n,name,m)=>`World ${n}, ${name}: ${m} minutes`,again:'Begin again',soundOn:'Music on',soundOff:'Music off',musicTap:'Tap for music',musicAria:'Background music',
+ en:{open:'The journey begins in silence.',hint:'Tap or scroll to enter',creditBy:'Envisioned and designed by',creditName:'Ashutosh Rahangdale',creditPath:'On the spiritual path for the past 6–7 years',creditIg:'Instagram · @ashyu___',brief:'Seven worlds, seven meditation challenges. Each world asks a little more of you, from 5 minutes of guided breathing in the first to 35 minutes of stillness in the last. Practise one world at a time and watch it awaken.',ladderCap:'Minutes of practice in each world',ladderAria:(n,name,m)=>`World ${n}, ${name}: ${m} minutes`,again:'Begin again',soundOn:'Music on',soundOff:'Music off',musicTap:'Tap for music',musicAria:'Background music',
   challenge:'Challenge',min:'min',plan:(b,m)=>`${b} min guided breathing, then ${m} min of quiet music`,awakened:'Awakened. Practice again anytime',
   contactShort:'For spiritual study, call',enter:'Enter within',settle:'Settle in',settleP:'Sit comfortably. Let your eyes close.',
   round:(c,n)=>`Round ${c} of ${n}`,music:'Quiet music',in:'Breathe in',hold:'Hold',out:'Breathe out slowly',focus:'Just focus on your breath.',
@@ -405,7 +417,7 @@ const TX={
   mapNote:'PageDown and PageUp move between worlds. A transparent PNG portrait becomes the presence that guides the journey. Esc closes this map.',
   here:'You are here',dormant:'Dormant',travel:'Travel to',worldN:(n,name)=>`World ${n} of 7. ${name}.`,imgAdded:'Presence image added to the journey.',
   langLabel:'Language: English. Switch to Hindi',sessAnn:(ch,m,b)=>`${ch}. ${m} minutes: ${b} minutes of guided breathing, then quiet music.`},
- hi:{open:'यात्रा मौन में शुरू होती है।',hint:'प्रवेश के लिए टैप या स्क्रॉल करें',brief:'सात लोक, सात ध्यान चुनौतियाँ। हर लोक आपसे थोड़ा और माँगता है, पहले लोक में 5 मिनट के निर्देशित श्वास से लेकर अंतिम लोक में 35 मिनट की स्थिरता तक। एक-एक लोक का अभ्यास करें और उसे जागते हुए देखें।',ladderCap:'हर लोक में अभ्यास के मिनट',ladderAria:(n,name,m)=>`लोक ${n}, ${name}: ${m} मिनट`,again:'फिर से शुरू करें',soundOn:'संगीत चालू',soundOff:'संगीत बंद',musicTap:'संगीत के लिए टैप करें',musicAria:'पृष्ठभूमि संगीत',
+ hi:{open:'यात्रा मौन में शुरू होती है।',hint:'प्रवेश के लिए टैप या स्क्रॉल करें',creditBy:'परिकल्पना और डिज़ाइन',creditName:'आशुतोष रहांगडाले',creditPath:'पिछले 6–7 वर्षों से आध्यात्मिक पथ पर',creditIg:'इंस्टाग्राम · @ashyu___',brief:'सात लोक, सात ध्यान चुनौतियाँ। हर लोक आपसे थोड़ा और माँगता है, पहले लोक में 5 मिनट के निर्देशित श्वास से लेकर अंतिम लोक में 35 मिनट की स्थिरता तक। एक-एक लोक का अभ्यास करें और उसे जागते हुए देखें।',ladderCap:'हर लोक में अभ्यास के मिनट',ladderAria:(n,name,m)=>`लोक ${n}, ${name}: ${m} मिनट`,again:'फिर से शुरू करें',soundOn:'संगीत चालू',soundOff:'संगीत बंद',musicTap:'संगीत के लिए टैप करें',musicAria:'पृष्ठभूमि संगीत',
   challenge:'चुनौती',min:'मिनट',plan:(b,m)=>`${b} मिनट निर्देशित श्वास, फिर ${m} मिनट शांत संगीत`,awakened:'जागृत। कभी भी फिर से अभ्यास करें',
   contactShort:'आध्यात्मिक अध्ययन के लिए कॉल करें',enter:'भीतर प्रवेश करें',settle:'स्थिर हो जाइए',settleP:'आराम से बैठिए। आँखें बंद होने दीजिए।',
   round:(c,n)=>`चक्र ${c} / ${n}`,music:'शांत संगीत',in:'साँस अंदर लीजिए',hold:'साँस रोकिए',out:'धीरे-धीरे साँस बाहर छोड़िए',focus:'बस अपनी साँस पर ध्यान दीजिए।',
